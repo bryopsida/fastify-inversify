@@ -1,0 +1,28 @@
+{
+  "name": "fastify-inversify",
+  "version": "0.1.0",
+  "description": "A fastify plugin for inversify",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryopsida/fastify-inversify.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bryopsida/fastify-inversify/issues"
+  },
+  "homepage": "https://github.com/bryopsida/fastify-inversify#readme",
+  "devDependencies": {
+    "inversify": "^6.0.1"
+  },
+  "dependencies": {
+    "fastify-plugin": "^4.5.0"
+  }
+}
