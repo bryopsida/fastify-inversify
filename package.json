@@ -3,11 +3,20 @@
   "version": "0.1.0",
   "description": "A fastify plugin for inversify",
   "main": "lib/index.js",
-  "directories": {
-    "test": "test"
+  "type": "module",
+  "exports": "./lib/index.js",
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=18.0.0"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node_modules/typescript/bin/tsc --project ./",
+    "test": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --coverage --testPathPattern='test/.*\\.spec\\.ts'",
+    "lint": "eslint --ext .ts src/ test/ && prettier --check .",
+    "lint:fix": "eslint --ext .ts src/ test/ --fix && prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -20,7 +29,26 @@
   },
   "homepage": "https://github.com/bryopsida/fastify-inversify#readme",
   "devDependencies": {
-    "inversify": "^6.0.1"
+    "@jest/globals": "29.4.2",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-github": "^4.6.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "jest": "^29.0.0",
+    "inversify": "^6.0.1",
+    "prettier": "2.8.3",
+    "standard": "^17.0.0",
+    "ts-jest": "29.x",
+    "ts-node": "^10.7.0",
+    "typedoc": "^0.23.23",
+    "typescript": "^4.6.2"
   },
   "dependencies": {
     "fastify-plugin": "^4.5.0"
